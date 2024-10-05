@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editing medication &laquo;[[${medication.name}]]&laquo; &ndash; Java</title>
+</head>
+<body>
+<a data-th-href="@{/customer/medications/{medicationId}(medicationId=${medication.id})}">&larr; to medication</a>
+<h1>Editing medication &laquo;[[${medication.name}]]&laquo;</h1>
+<form method="post" data-th-action="@{/customer/medications/{medicationId}/edit(medicationId=${medication.id})}">
+    <label>
+        <p>manufacturer:</p>
+        <input type="text" name="manufacturer" data-th-value="${medication.manufacturer}">
+        <p>price:<p>
+        <input type="number" name="price" data-th-value="${medication.price}">
+        <p>category:<p>
+        <input type="text" name="category" data-th-value="${medication.category}">
+    </label><br>
+    <label>
+        <br>Description:<br>
+        <textarea name="description" data-th-text="${medication.description}"></textarea>
+    </label><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

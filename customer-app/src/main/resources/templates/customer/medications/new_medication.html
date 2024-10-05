@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New medication &ndash; Pharmacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 1.75em;
+            color: #333;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        form label {
+            width: 80%;
+            max-width: 400px;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            width: 100%;
+            font-size: 1em;
+        }
+        form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        form button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a data-th-href="@{/customer/medications/list}">&larr; to medications list</a>
+    <h1>New medication</h1>
+    <!--<div data-th-if="${errors}">-->
+    <!--    <h2>You made mistakes </h2>-->
+    <!--    <ul>-->
+    <!--        <li data-th-each="error: ${errors}" data-th-text="${error}"></li>-->
+    <!--    </ul>-->
+    <!--</div>-->
+    <form method="post" data-th-action="@{/customer/medications/create}">
+        <label>
+            Name:<br>
+            <input type="text" name="name" data-th-value="${payload?.name}"><br>
+            Manufacturer<br>
+            <input type="text" name="manufacturer" data-th-value="${payload?.manufacturer}"><br>
+            Category<br>
+            <input type="text" name="category" data-th-value="${payload?.category}"><br>
+            Price:<br>
+            <input type="number" name="price" data-th-value="${payload?.price}"><br>
+        </label><br>
+        <label>
+            Description:<br>
+            <textarea name="description" data-th-value="${payload?.description}"></textarea><br>
+        </label><br>
+        <button type="submit">Create</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:14:///pharmacy?TC_DAEMON=true
+    username: pharmacy
+    password: pharmacy

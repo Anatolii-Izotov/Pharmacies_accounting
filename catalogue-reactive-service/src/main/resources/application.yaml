@@ -1,0 +1,21 @@
+  spring:
+    data:
+      mongodb:
+        uri: mongodb://localhost:27017/mongodb
+#    security:
+#      user:
+#        name: catalogue_reactive_service_user
+#        password: password
+#        roles:
+#          - SERVICE
+    security:
+      oauth2:
+        resourceserver:
+          jwt:
+            issuer-uri: http://localhost:8082/realms/pharmacy
+
+  server:
+    port: 8083
+  logging:
+    level:
+      sql: info

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products &ndash; Pharmacy</title>
+</head>
+<body>
+<!-- Ссылка на страницу избранных товаров -->
+<a data-th-href="@{/customer/products/create}">+ Create new item</a><br><br>
+<a data-th-href="@{/customer/products/favourites}">❤️Favourite products</a>
+
+<h1>Item list</h1>
+
+<form>
+    <label>Filter:
+        <input type="text" name="filter" data-th-value="${filter}">
+        <button type="submit">Search</button>
+    </label>
+</form>
+
+<!-- Список продуктов -->
+<ul>
+    <!-- Проходим по каждому продукту из списка products -->
+    <li data-th-each="product : ${products}">
+        <strong>
+            <!-- Название продукта и ссылка на его страницу -->
+            <a data-th-text="${product.title}"
+               data-th-href="@{/customer/products/{productId}(productId=${product.id})}"></a>
+        </strong>
+        <!-- Детали продукта -->
+        <p data-th-text="${product.details}"></p>
+    </li>
+</ul>
+</body>
+</html>

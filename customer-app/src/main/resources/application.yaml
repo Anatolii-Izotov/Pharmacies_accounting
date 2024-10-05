@@ -1,0 +1,21 @@
+services:
+  catalogue:
+    uri: http://localhost:8083
+    registration-id: keycloak
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/pharmacy
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: customer-app
+            client-secret: iCNGD6rCE8NDpbUvLloegdWcUPHQhLHo
+            scope:
+              - openid
+              - view_catalogue
+server:
+  port: 8084

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editing medication &laquo;[[${medication.name}]]&laquo; &ndash; Java</title>
+</head>
+<body>
+<a data-th-href="@{/customer/medications/{medicationId}(medicationId=${medication.id})}">&larr; to medication</a>
+<h1>Editing medication &laquo;[[${medication.name}]]&laquo;</h1>
+<form method="post" data-th-action="@{/customer/medications/stock/{medicationId}/edit(medicationId=${medication.id})}">
+    <label>
+        <p>manufacturer:</p>
+        <input type="text" name="manufacturer" data-th-value="${medication.manufacturer}">
+        <p>price:<p>
+        <input type="number" name="price" data-th-value="${medication.price}">
+        <p>category:<p>
+        <input type="text" name="category" data-th-value="${medication.category}">
+
+        <p>Quantity</p>
+        <input type="number" name="quantity" data-th-value="${stock.quantity}">
+        <p>Expiration Date</p>
+        <input type="date" name="expirationDate" data-th-value="${stock.expirationDate}">
+        <p>Location type</p>
+        <input type="text" name="locationType" data-th-value="${stock.locationType}">
+        <p>Location</p>
+        <input type="text" name="location" data-th-value="${stock.location}">
+        <p>Batch Number</p>
+        <input type="text" name="batchNumber" data-th-value="${stock.batchNumber}">
+        <p>Received Date</p>
+        <input type="date" name="dateReceived" data-th-value="${stock.dateReceived}">
+
+    </label><br>
+    <label>
+        <br>Description:<br>
+        <textarea name="description" data-th-text="${medication.description}"></textarea>
+    </label><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

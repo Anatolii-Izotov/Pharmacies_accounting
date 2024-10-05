@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medications &ndash; Pharmacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 1.75em;
+            color: #333;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px 20px; /* Adjusted padding to include space for the plus icon */
+            position: relative;
+        }
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 20px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        form input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 1em;
+        }
+        form input::placeholder {
+            color: #aaa;
+        }
+        form button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9em;
+        }
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Medications</h1>
+
+    <!-- Кнопки для перехода на разные страницы -->
+    <div style="text-align: center;">
+        <a href="http://localhost:8084/customer/medications/stock" class="button">View Stock</a>
+        <a href="http://localhost:8084/customer/medications/list" class="button">View List</a>
+    </div>
+
+    <!-- Форма для фильтрации -->
+<!--    <form>-->
+<!--        <input type="text" name="filter" placeholder="Filter medications">-->
+<!--        <button type="submit">Search</button>-->
+<!--    </form>-->
+</div>
+</body>
+</html>
